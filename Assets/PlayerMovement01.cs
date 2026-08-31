@@ -10,7 +10,10 @@ public class PlayerMovement01 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     bool isGrounded = true; // Flag to check if the player is on the ground
   
-
+    void Start()
+    {
+        Debug.Log("Game Started!"); 
+    }
     // Update is called once per frame
     void FixedUpdate() 
     {
