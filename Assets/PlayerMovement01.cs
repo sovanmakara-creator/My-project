@@ -7,6 +7,7 @@ public class PlayerMovement01 : MonoBehaviour
     public float forwardForce = 200f; // Force applied to move the player forward
     public float sidewaysForce = 10f; // Force applied to move the player sideways
     public float jumpForce = 5f; // Force applied to make the player jump
+    public float BackwardForce = 20f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     bool isGrounded = true; // Flag to check if the player is on the ground
   
@@ -39,6 +40,9 @@ public class PlayerMovement01 : MonoBehaviour
         if(kb.wKey.isPressed)
         {
             rb.AddForce(0, 0,sidewaysForce, ForceMode.VelocityChange);
+        }
+        if(kb.sKey.isPressed){
+            rb.AddForce(0, 0, -BackwardForce, ForceMode.VelocityChange);
         }
         if (kb.spaceKey.isPressed)
         {
