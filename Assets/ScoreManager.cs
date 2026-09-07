@@ -10,13 +10,15 @@ public class ScoreManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private string play_Position;
 
+    public float totalscore_board;
+
     public void Update()
     {
         
        play_Position = Mathf.FloorToInt(player.position.z).ToString();
        
 
-        scoreText.text =  $"{play_Position} / 745";
+        scoreText.text =  $"{play_Position} / {totalscore_board}";
     }
 
 }

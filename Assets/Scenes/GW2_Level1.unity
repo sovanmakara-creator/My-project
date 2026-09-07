@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86, y: 661}
-  m_SizeDelta: {x: 400, y: 50}
+  m_AnchoredPosition: {x: 287, y: 543.7}
+  m_SizeDelta: {x: 852.1, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &330585543
 GameObject:
@@ -295,8 +295,8 @@ Camera:
   m_GameObject: {fileID: 330585543}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -551,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 17.4
+      value: -11.72
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66
+      value: 136.2
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -858,7 +858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 79.2
+      value: 67.7
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1108,6 +1108,8 @@ MonoBehaviour:
   forwardForce: 0
   sidewaysForce: 1.2
   jumpForce: 15
+  stoppingFriction: 2
+  sidewaysSpeed: 12
   BackwardForce: 1
 --- !u!114 &1315112215
 MonoBehaviour:
@@ -1144,7 +1146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 40.7
+      value: 103.3
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1370,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player: {fileID: 1315112212}
   scoreText: {fileID: 169447867}
+  totalscore_board: 0
 --- !u!224 &2142146006
 RectTransform:
   m_ObjectHideFlags: 0

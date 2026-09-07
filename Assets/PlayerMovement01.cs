@@ -10,6 +10,7 @@ public class PlayerMovement01 : MonoBehaviour
     public float jumpForce = 6f;
     public float stoppingFriction = 2f;
     public float sidewaysSpeed = 12f;
+    public float BackwardForce=10f;
 
     private bool isGrounded = true;
     private bool hasFinished = false;
@@ -44,7 +45,7 @@ public class PlayerMovement01 : MonoBehaviour
             rb.AddForce(0f, 0f, sidewaysForce, ForceMode.VelocityChange);
 
         if (kb.sKey.isPressed)
-            rb.AddForce(0f, 0f, -sidewaysForce, ForceMode.VelocityChange);
+            rb.AddForce(0f, 0f, BackwardForce, ForceMode.VelocityChange);
 
         if (kb.spaceKey.isPressed && isGrounded)
         {
@@ -65,7 +66,7 @@ public class PlayerMovement01 : MonoBehaviour
     {
         if (other.CompareTag("Finished"))
         {
-            Debug.Log("Hit the finish line! Disabling controls and slowing down...");
+            Debug.Log("Reached the finished line");
             hasFinished = true;
         }
     }
