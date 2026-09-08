@@ -45,7 +45,7 @@ public class PlayerMovement01 : MonoBehaviour
             rb.AddForce(0f, 0f, sidewaysForce, ForceMode.VelocityChange);
 
         if (kb.sKey.isPressed)
-            rb.AddForce(0f, 0f, BackwardForce, ForceMode.VelocityChange);
+            rb.AddForce(0f, 0f, -BackwardForce, ForceMode.VelocityChange);
 
         if (kb.spaceKey.isPressed && isGrounded)
         {
