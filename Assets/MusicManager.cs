@@ -5,13 +5,13 @@ public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
 
-    //music bg
-    private AudioSource audioSource;
+    // Background music
+    public AudioSource musicSource;
 
-    //Button/ UI Sound effects
-    private AudioSource sfxSource;
+    // Button / UI sound effects
+    public AudioSource sfxSource;
 
-    [Header("Sound Effects")] 
+    [Header("Sound Effects")]
     public AudioClip buttonClickSound;
 
     void Awake()
@@ -23,17 +23,13 @@ public class MusicManager : MonoBehaviour
             return;
         }
 
-        // Save this MusicManager
         instance = this;
 
-        // Don't destroy when changing scenes
+        // Keep MusicManager between scenes
         DontDestroyOnLoad(gameObject);
 
-        // Get Audio Source component
-        audioSource[] sources = GetComponent<AudioSource>();
-
-        musicSource = sources[0];
-        sfxSource = sources[1];
+        // Get both Audio Sources
+        
     }
 
     // =========================
@@ -42,7 +38,7 @@ public class MusicManager : MonoBehaviour
 
     public void MusicOn()
     {
-        audioSource.UnPause();
+        musicSource.UnPause();
     }
 
     // =========================
@@ -51,26 +47,38 @@ public class MusicManager : MonoBehaviour
 
     public void MusicOff()
     {
-        audioSource.Pause();
+        musicSource.Pause();
     }
 
     // =========================
-    // VOLUME
+    // MUSIC VOLUME
     // =========================
 
     public void SetVolume(float volume)
     {
-        audioSource.volume = volume;
+        musicSource.volume = volume;
     }
 
     // =========================
-    // MUTE
+    // MUTE MUSIC
     // =========================
 
     public void ToggleMute()
     {
-        audioSource.mute = !audioSource.mute;
+        musicSource.mute = !musicSource.mute;
+    }
+
+    // =========================
+    // BUTTON SOUND
+    // =========================
+
+    public void PlayButtonSound()
+    {
+        sfxSource.PlayOneShot(buttonClickSound);
+    }
+
+    public void  SetSFXVolume(float volume){
+        sfxSource.volume = volume;
     }
 }
-
 
