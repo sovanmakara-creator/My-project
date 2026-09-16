@@ -3706,6 +3706,9 @@ MonoBehaviour:
   musicSource: {fileID: 851779175}
   sfxSource: {fileID: 197446930}
   buttonClickSound: {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
+  turnleftSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+  turnRightSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+  jumpSound: {fileID: 8300000, guid: 4e349dc959014a845b9aa317d1c2b7f0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
