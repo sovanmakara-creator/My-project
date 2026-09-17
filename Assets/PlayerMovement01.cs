@@ -33,38 +33,23 @@ public class PlayerMovement01 : MonoBehaviour
 
         Keyboard kb = Keyboard.current;
         if (kb == null)
-        {
             return;
-        }
-            
 
-        if (kb.dKey.isPressed){
+        if (kb.dKey.isPressed)
             rb.AddForce(sidewaysForce, 0f, 0f, ForceMode.VelocityChange);
-            MusicManager.Instance.PlaySFX(MusicManager.Instance.turnRightSound);
-        }
-            
 
-        if (kb.aKey.isPressed){
+        if (kb.aKey.isPressed)
             rb.AddForce(-sidewaysForce, 0f, 0f, ForceMode.VelocityChange);
-            MusicManager.Instance.PlaySFX(MusicManager.Instance.turnleftSound);
-        }
-            
 
-        if (kb.wKey.isPressed){
+        if (kb.wKey.isPressed)
             rb.AddForce(0f, 0f, sidewaysForce, ForceMode.VelocityChange);
-        }
-            
 
         if (kb.sKey.isPressed)
-        {
-           rb.AddForce(0f, 0f, -BackwardForce, ForceMode.VelocityChange); 
-        }
-            
+            rb.AddForce(0f, 0f, -BackwardForce, ForceMode.VelocityChange);
 
         if (kb.spaceKey.isPressed && isGrounded)
         {
             rb.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
-            MusicManager.Instance.PlaySFX(MusicManager.Instance.jumpSound);
             isGrounded = false;
         }
     }
