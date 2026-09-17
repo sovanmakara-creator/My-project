@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public static MusicManager Instance { get; private set; }
+    private static MusicManager instance;
 
     // Background music
     public AudioSource musicSource;
@@ -14,23 +14,23 @@ public class MusicManager : MonoBehaviour
     [Header("Sound Effects")]
     public AudioClip buttonClickSound;
 
-    [Header("Player Sounds")]
-    public AudioClip turnleftSound;
-    public AudioClip turnRightSound;
-    public AudioClip jumpSound;
-
-  void Awake()
-{
-    if (Instance != null && Instance != this)
+    void Awake()
     {
-        Destroy(gameObject);
-        return;
+        // Prevent duplicate MusicManagers
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+
+        // Keep MusicManager between scenes
+        DontDestroyOnLoad(gameObject);
+
+        // Get both Audio Sources
+        
     }
-
-    Instance = this;
-
-    DontDestroyOnLoad(gameObject);
-}
 
     // =========================
     // MUSIC ON
@@ -80,9 +80,5 @@ public class MusicManager : MonoBehaviour
     public void  SetSFXVolume(float volume){
         sfxSource.volume = volume;
     }
-    public void PlaySFX(AudioClip sound)
-{
-    sfxSource.PlayOneShot(sound);
-}
 }
 

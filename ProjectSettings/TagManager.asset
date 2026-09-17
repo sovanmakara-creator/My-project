@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - Finished line
   - Finished
+  - DeathZone
+  - Collectible
   layers:
   - Default
   - TransparentFX
