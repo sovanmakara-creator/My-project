@@ -355,17 +355,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543353131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.45, y: 0.44999996, z: 0.44999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 941578550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 252.70001, y: 110}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -129.11108, y: -58}
+  m_SizeDelta: {x: 65.77789, y: 65.77789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &543353133
 MonoBehaviour:
@@ -405,6 +405,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543353131}
   m_CullTransparentMesh: 1
+--- !u!1 &561510858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561510859}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561510859
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561510858}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17, y: -134, z: 883.7216}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 941578550}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633381606
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,10 +699,11 @@ RectTransform:
   m_Children:
   - {fileID: 828136310}
   - {fileID: 1153343828}
-  - {fileID: 39348202}
   - {fileID: 543353132}
   - {fileID: 1355896546}
   - {fileID: 1822995034}
+  - {fileID: 561510859}
+  - {fileID: 39348202}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1459,17 +1491,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355896545}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.45, y: 0.44999996, z: 0.44999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 941578550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 307, y: 110}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -96.111115, y: -58}
+  m_SizeDelta: {x: 65.77789, y: 65.77789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1355896547
 MonoBehaviour:
@@ -1771,17 +1803,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822995033}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 0.45, y: 0.44999996, z: 0.44999996}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 941578550}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 359, y: 110}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -63, y: -58}
+  m_SizeDelta: {x: 65.77789, y: 65.77789}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822995035
 MonoBehaviour:
@@ -1851,11 +1883,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackSpawner
   trackSegmentPrefab: {fileID: 5108589333886038647, guid: 62f7f1ad1279647938777a6c3c16cba7, type: 3}
-  collectiblePrefab: {fileID: 8218825391814181656, guid: 8e3b26ed142994969ae931f81cb66d99, type: 3}
+  obstaclePrefab: {fileID: 0}
+  foodPrefabs:
+  - {fileID: 6363132578887343074, guid: f4101459db0ec4643a455fd25bc032e7, type: 3}
+  - {fileID: 4219506004410525513, guid: 159e1e1a203f2d54c838e34c51aefe0f, type: 3}
+  - {fileID: 2723979605959215488, guid: 7ba2c2e8f21729c4aa4131e657a1cd0b, type: 3}
   player: {fileID: 633381607}
   segmentsAhead: 10
   segmentLength: 2
   collectibleChance: 0.4
+  obstacleChance: 0.3
   turnChance: 0.5
 --- !u!4 &1973999938
 Transform:
