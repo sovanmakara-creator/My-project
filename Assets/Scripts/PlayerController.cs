@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // Attach this to the player Cube.
 // Requires: Rigidbody component (set "Freeze Rotation" on X/Y/Z in Inspector,
@@ -28,10 +29,12 @@ public class PlayerController : MonoBehaviour
         if (isDead) return;
 
         // Desktop input: Spacebar or Left Mouse click toggles direction
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if (Keyboard.current.spaceKey.wasPressedThisFrame ||
+            Mouse.current.leftButton.wasPressedThisFrame)
         {
             ToggleDirection();
         }
+        
     }
 
     void FixedUpdate()
