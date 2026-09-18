@@ -1,8 +1,8 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-// Attach this to the player Cube.
-// Requires: Rigidbody component (set "Freeze Rotation" on X/Y/Z in Inspector,
-// or let this script do it in Start()).
+// Attach this to the Player.
+// Requires a Rigidbody component.
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
@@ -11,13 +11,14 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public GameManager gameManager;
 
-    private Vector3 currentDirection = Vector3.forward; // starts moving along +Z
+    private Vector3 currentDirection = Vector3.forward;
     private Rigidbody rb;
     private bool isDead = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         rb.constraints = RigidbodyConstraints.FreezeRotationX
                         | RigidbodyConstraints.FreezeRotationY
                         | RigidbodyConstraints.FreezeRotationZ;
@@ -27,8 +28,16 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        // Desktop input: Spacebar or Left Mouse click toggles direction
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        // Spacebar - New Input System
+        if (Keyboard.current != null &&
+            Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            ToggleDirection();
+        }
+
+        // Left mouse click - New Input System
+        if (Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame)
         {
             ToggleDirection();
         }
@@ -38,25 +47,42 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
-        Vector3 move = currentDirection * moveSpeed * Time.fixedDeltaTime;
+        Vector3 move =
+            currentDirection *
+            moveSpeed *
+            Time.fixedDeltaTime;
+
         rb.MovePosition(rb.position + move);
     }
 
     void ToggleDirection()
     {
-        // Switches between moving along +Z (forward) and +X (right)
-        currentDirection = (currentDirection == Vector3.forward) ? Vector3.right : Vector3.forward;
+        if (currentDirection == Vector3.forward)
+        {
+            currentDirection = Vector3.right;
+        }
+        else
+        {
+            currentDirection = Vector3.forward;
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (isDead) return;
 
+        // Collect food
         if (other.CompareTag("Collectible"))
         {
-            gameManager.AddScore(1);
+            if (gameManager != null)
+            {
+                gameManager.AddScore(1);
+            }
+
             Destroy(other.gameObject);
         }
+
+        // Hit obstacle
         else if (other.CompareTag("DeathZone"))
         {
             Die();
@@ -65,7 +91,13 @@ public class PlayerController : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+
         isDead = true;
-        gameManager.GameOver();
+
+        if (gameManager != null)
+        {
+            gameManager.GameOver();
+        }
     }
 }

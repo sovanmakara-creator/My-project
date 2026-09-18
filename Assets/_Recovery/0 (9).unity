@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackSpawner
   trackSegmentPrefab: {fileID: 5108589333886038647, guid: 62f7f1ad1279647938777a6c3c16cba7, type: 3}
-  obstaclePrefab: {fileID: 503483344672861504, guid: 8fc0b682bbe85480cacd495c6caade51, type: 3}
+  obstaclePrefab: {fileID: 9185718379718454910, guid: 8fc0b682bbe85480cacd495c6caade51, type: 3}
   foodPrefabs:
   - {fileID: 9149449997977687346, guid: b6dcb74a26a3e644ab65d0030d10114e, type: 3}
   - {fileID: 6363132578887343074, guid: f4101459db0ec4643a455fd25bc032e7, type: 3}
@@ -1769,6 +1769,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094413211}
   m_CullTransparentMesh: 1
+--- !u!1 &2140653567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6110062296304459689, guid: 8adc1499d79034825bacfe9d330761b0, type: 3}
+  m_PrefabInstance: {fileID: 4470886813490035963}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2140653573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140653567}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 268d8bb2a5cf147e9bdb9c0efc62aeba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 3
+  heartImages: []
+  blueHeart: {fileID: 0}
+  grayHeart: {fileID: 0}
+  damageCooldown: 1
 --- !u!1001 &4470886813490035963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1832,7 +1854,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6110062296304459689, guid: 8adc1499d79034825bacfe9d330761b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2140653573}
   m_SourcePrefab: {fileID: 100100000, guid: 8adc1499d79034825bacfe9d330761b0, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

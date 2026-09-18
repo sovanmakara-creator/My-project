@@ -1547,11 +1547,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TrackSpawner
   trackSegmentPrefab: {fileID: 5108589333886038647, guid: 62f7f1ad1279647938777a6c3c16cba7, type: 3}
-  collectiblePrefab: {fileID: 8218825391814181656, guid: 8e3b26ed142994969ae931f81cb66d99, type: 3}
+  obstaclePrefab: {fileID: 0}
+  foodPrefabs:
+  - {fileID: 1465554420280045673, guid: 13972cc8cb15c834eae79213cf77f49b, type: 3}
+  - {fileID: 6939595374418175004, guid: e88776abf6d9f18498573d1ac4998b9f, type: 3}
+  - {fileID: 1955685003273417077, guid: 6d09de618ef9d924a830e73240e1191e, type: 3}
+  - {fileID: 9220601880022987477, guid: 517ec6d0c9031534ea7addfeccb576f8, type: 3}
+  - {fileID: 4937041081169205926, guid: 14425844763e75547ad8f490b47a8042, type: 3}
+  - {fileID: 6768281799718176668, guid: 86e2d519cf9140e4a82c26ca252a6d44, type: 3}
   player: {fileID: 633381607}
   segmentsAhead: 8
   segmentLength: 2
   collectibleChance: 0.312
+  obstacleChance: 0.3
   turnChance: 0.65
 --- !u!4 &1973999938
 Transform:
