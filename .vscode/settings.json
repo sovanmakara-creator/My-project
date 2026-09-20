@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Version2-sept20.slnx"
+    "dotnet.defaultSolution": "My-project.slnx"
 }
