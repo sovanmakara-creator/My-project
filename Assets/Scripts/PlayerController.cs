@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isDead) return;
 
+<<<<<<< HEAD
         // Spacebar - New Input System
         if (Keyboard.current != null &&
             Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -37,10 +38,15 @@ public class PlayerController : MonoBehaviour
 
         // Left mouse click - New Input System
         if (Mouse.current != null &&
+=======
+        // Desktop input: Spacebar or Left Mouse click toggles direction
+        if (Keyboard.current.spaceKey.wasPressedThisFrame ||
+>>>>>>> main
             Mouse.current.leftButton.wasPressedThisFrame)
         {
             ToggleDirection();
         }
+        
     }
 
     void FixedUpdate()
