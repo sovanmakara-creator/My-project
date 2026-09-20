@@ -20,5 +20,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GW2_Level2.unity
     guid: 6b233bce4876e7c4b8675b66a9ce48cc
+  - enabled: 1
+    path: Assets/Scenes/GW3_Level1.unity
+    guid: 389c95d3342ef4f0f9c157ee56b8cf57
+  - enabled: 1
+    path: Assets/Scenes/GW3_Level2.unity
+    guid: 65a2736414592422b88115ed96c93085
+  - enabled: 1
+    path: Assets/Scenes/GW3_Level3.unity
+    guid: 439091d8592ce4098b2e12a866ab8599
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -2565,9 +2565,7 @@ MonoBehaviour:
   trackSegmentPrefab: {fileID: 5108589333886038647, guid: 62f7f1ad1279647938777a6c3c16cba7, type: 3}
   obstaclePrefab: {fileID: 0}
   foodPrefabs:
-  - {fileID: 6363132578887343074, guid: f4101459db0ec4643a455fd25bc032e7, type: 3}
-  - {fileID: 4219506004410525513, guid: 159e1e1a203f2d54c838e34c51aefe0f, type: 3}
-  - {fileID: 2723979605959215488, guid: 7ba2c2e8f21729c4aa4131e657a1cd0b, type: 3}
+  - {fileID: 8218825391814181656, guid: 8e3b26ed142994969ae931f81cb66d99, type: 3}
   player: {fileID: 633381607}
   segmentsAhead: 10
   segmentLength: 2
