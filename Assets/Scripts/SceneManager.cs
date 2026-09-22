@@ -28,7 +28,7 @@ public class LevelLoader : MonoBehaviour
     }
      public void GW2_level_3()
     {
-        SceneManager.LoadScene("GW1_Level3");
+        SceneManager.LoadScene("GW2_Level3");
     }
 
     public void GW3_level1()
@@ -46,7 +46,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("GW3_Level3");
     }
     public void Main_menu(){
-        
+
         SceneManager.LoadScene("Main_menu");
     }
 }

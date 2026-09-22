@@ -42,4 +42,12 @@ public class GameManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void Pausebtn(){
+        Time.timeScale = 0f;
+    }
+    public void Replay(){
+        Time.timeScale = 1f;
+    }
+    
 }

@@ -5866,6 +5866,7 @@ GameObject:
   - component: {fileID: 1315112213}
   - component: {fileID: 1315112214}
   - component: {fileID: 1315112215}
+  - component: {fileID: 1315112216}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -6026,7 +6027,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   movement: {fileID: 1315112214}
   player: {fileID: 0}
-  GameOverPanel: {fileID: 0}
+  GameOverPanel: {fileID: 1545456727}
+--- !u!114 &1315112216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1315112208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ff20027f18a4f4e9b4caa39bf776c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Finished_Line
+  Player: {fileID: 1315112208}
+  Line: {fileID: 1625060277}
+  WinningPanel: {fileID: 515050807}
 --- !u!1 &1328391933
 GameObject:
   m_ObjectHideFlags: 0
@@ -6110,7 +6126,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1803758053}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
         m_MethodName: Main_menu
         m_Mode: 1
@@ -6881,7 +6897,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 776028902308989750, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_Name
-      value: Building (2)
+      value: Finish_line
+      objectReference: {fileID: 0}
+    - target: {fileID: 776028902308989750, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
+      propertyPath: m_TagString
+      value: Finished
       objectReference: {fileID: 0}
     - target: {fileID: 2973804552857121811, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6923,6 +6943,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4879669968495979462, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6075166657159952661, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -6932,6 +6956,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
+--- !u!1 &1625060277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 776028902308989750, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
+  m_PrefabInstance: {fileID: 1625060276}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1629622640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7670,9 +7699,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
-        m_MethodName: PlayButtonSound
+      - m_Target: {fileID: 2142146005}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: Replay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7813,6 +7842,50 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2d4346d8e4d6fd48997490c442347df, type: 3}
+--- !u!1 &1803758052
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1803758054}
+  - component: {fileID: 1803758053}
+  m_Layer: 0
+  m_Name: SceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1803758053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803758052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9413862873d44c1c808d1efabdc04f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
+--- !u!4 &1803758054
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1803758052}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.062279515, z: -0, w: 0.9980588}
+  m_LocalPosition: {x: -13.23, y: -0.20960045, z: 135.74}
+  m_LocalScale: {x: 5.6051, y: 5.6051, z: 5.6050997}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1808632020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9180,22 +9253,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: Pausebtn
-        m_Mode: 1
+      - m_Target: {fileID: 298984546}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2142146005}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: Pausebtn
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -9528,6 +9601,7 @@ SceneRoots:
   - {fileID: 926264538}
   - {fileID: 2142146006}
   - {fileID: 451185913}
+  - {fileID: 1803758054}
   - {fileID: 1091716445}
   - {fileID: 899102583}
   - {fileID: 1276363277}
