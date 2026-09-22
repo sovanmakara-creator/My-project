@@ -5,16 +5,25 @@ using UnityEngine.SceneManagement;
 public class Player_Collision : MonoBehaviour
 {
     public PlayerMovement01 movement;
-    public Transform player;
+    [HideInInspector] public Transform player; // Hidden in inspector because it assigns automatically now
     public GameObject GameOverPanel;
 
-    // FIX 1: Changed "Updated" to "Update" so Unity automatically calls it every frame
+    void Start()
+    {
+        // Automatically assigns the player transform so you don't get the error
+        player = GetComponent<Transform>(); 
+        
+        // Optional: If movement is on the same object, we can auto-assign it too
+        if (movement == null) 
+        {
+            movement = GetComponent<PlayerMovement01>();
+        }
+    }
+
     void Update()
     {
-        // FIX 2: Changed "player.Transform.position" to "player.position" 
         if (player.position.y < -1f)
         {
-            
             StartCoroutine(ShowGameOverAfterDelay());
         }
     }
@@ -32,7 +41,15 @@ public class Player_Collision : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
 
-        GameOverPanel.SetActive(true);
-        movement.enabled = false;  
+        // Safety check to prevent a different error if the panel isn't assigned
+        if (GameOverPanel != null)
+        {
+            GameOverPanel.SetActive(true);
+        }
+        
+        if (movement != null)
+        {
+            movement.enabled = false;  
+        }
     }
 }
