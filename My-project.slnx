@@ -1,6 +1,9 @@
 ﻿<Solution>
+  <Project Path="BlockadeLabsSDK.Runtime.csproj" />
   <Project Path="Boxophobic.Utils.Editor.csproj" />
+  <Project Path="BlockadeLabsSDK.Tests.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="BlockadeLabsSDK.Editor.csproj" />
   <Project Path="Polyperfect.Animals.csproj" />
   <Project Path="Polyperfect.Common.csproj" />
   <Project Path="Boxophobic.Utils.Scripts.csproj" />

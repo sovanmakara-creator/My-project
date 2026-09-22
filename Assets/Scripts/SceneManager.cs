@@ -45,4 +45,8 @@ public class LevelLoader : MonoBehaviour
     {
         SceneManager.LoadScene("GW3_Level3");
     }
+    public void Main_menu(){
+        
+        SceneManager.LoadScene("Main_menu");
+    }
 }
