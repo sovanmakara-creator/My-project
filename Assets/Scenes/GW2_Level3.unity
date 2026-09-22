@@ -6025,6 +6025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   movement: {fileID: 1315112214}
+  player: {fileID: 0}
   GameOverPanel: {fileID: 0}
 --- !u!1 &1328391933
 GameObject:
@@ -6925,7 +6926,7 @@ PrefabInstance:
     - target: {fileID: 6075166657159952661, guid: 3a8eb2e712fcfa447bb34a29ddcefde3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 5cb485765d7b1a245af6ac6a39659ecb, type: 2}
+      objectReference: {fileID: 2100000, guid: 0b51513151346dd40b5b38463b8bf092, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
