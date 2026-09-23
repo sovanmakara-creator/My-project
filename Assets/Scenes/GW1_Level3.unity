@@ -398,7 +398,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1938035093}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: GW2_level_1
+        m_MethodName: Main_menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
