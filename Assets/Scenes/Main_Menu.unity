@@ -14103,6 +14103,10 @@ MonoBehaviour:
   musicSource: {fileID: 851779175}
   sfxSource: {fileID: 197446930}
   buttonClickSound: {fileID: 8300000, guid: 245965889d0a183438ef3478b27122c0, type: 3}
+  JumpSound: {fileID: 8300000, guid: 3f58c6352d85546a69da143b73439011, type: 3}
+  winSound: {fileID: 8300000, guid: b21d088414fb447c9aa87f9da1f93fd0, type: 3}
+  GameOverSound: {fileID: 8300000, guid: dd884bdafc2924a7bb9c2a6f00a2c305, type: 3}
+  CollectingCoin: {fileID: 8300000, guid: 15252a96ff461496aace0f4c18652eb7, type: 3}
 --- !u!1 &2110821124
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,6 +24,7 @@ public class Player_Collision : MonoBehaviour
     {
         if (player.position.y < -1f)
         {
+            MusicManager.instance.PlayGameOverSound();
             StartCoroutine(ShowGameOverAfterDelay());
         }
     }
@@ -31,7 +32,8 @@ public class Player_Collision : MonoBehaviour
     void OnCollisionEnter(Collision collisionInfo)
     {
         if (collisionInfo.collider.tag == "Obstacle")
-        {
+        {   
+            MusicManager.instance.PlayGameOverSound();
             Debug.Log("We hit an obstacle");
             StartCoroutine(ShowGameOverAfterDelay());
         }

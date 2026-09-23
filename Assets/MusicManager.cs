@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    private static MusicManager instance;
+   public static MusicManager instance;
 
     // Background music
     public AudioSource musicSource;
@@ -13,6 +13,12 @@ public class MusicManager : MonoBehaviour
 
     [Header("Sound Effects")]
     public AudioClip buttonClickSound;
+    public AudioClip JumpSound;
+
+    public AudioClip winSound;
+    public AudioClip GameOverSound;
+    public AudioClip CollectingCoin;
+
 
     void Awake()
     {
@@ -79,6 +85,24 @@ public class MusicManager : MonoBehaviour
 
     public void  SetSFXVolume(float volume){
         sfxSource.volume = volume;
+    }
+   public void PlayJumpSound()
+{
+    if (sfxSource == null) { Debug.LogError("sfxSource is missing in Inspector!"); return; }
+    if (JumpSound == null) { Debug.LogError("JumpSound clip is None in Inspector!"); return; }
+    
+
+    sfxSource.PlayOneShot(JumpSound);
+}
+    
+    public void PlayWinSound(){
+        sfxSource.PlayOneShot(winSound);
+    }
+    public void PlayGameOverSound(){
+        sfxSource.PlayOneShot(GameOverSound);
+    }
+    public void PlayCollectingCoinSound(){
+        sfxSource.PlayOneShot(CollectingCoin);
     }
 }
 
