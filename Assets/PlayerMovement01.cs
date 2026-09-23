@@ -49,6 +49,7 @@ public class PlayerMovement01 : MonoBehaviour
 
         if (kb.spaceKey.isPressed && isGrounded)
         {
+            MusicManager.instance.PlayJumpSound();
             rb.AddForce(0f, jumpForce, 0f, ForceMode.VelocityChange);
             isGrounded = false;
         }

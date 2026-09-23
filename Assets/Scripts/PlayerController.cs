@@ -67,27 +67,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+   void OnTriggerEnter(Collider other)
+{
+    if (isDead) return;
+
+    Debug.Log("Trigger collided with: " + other.gameObject.name + " | Tag: " + other.tag);
+
+    // Collect food
+    if (other.CompareTag("Collectible"))
     {
-        if (isDead) return;
-
-        // Collect food
-        if (other.CompareTag("Collectible"))
+        if (gameManager != null)
         {
-            if (gameManager != null)
-            {
-                gameManager.AddScore(1);
-            }
-
-            Destroy(other.gameObject);
+            gameManager.AddScore(1);
         }
 
-        // Hit obstacle
-        else if (other.CompareTag("DeathZone"))
+        if (MusicManager.instance != null)
         {
-            Die();
+            MusicManager.instance.PlayCollectingCoinSound();
         }
+        
+
+        Destroy(other.gameObject);
     }
+    else if (other.CompareTag("DeathZone"))
+    {
+        Die();
+    }
+}
 
     void Die()
     {

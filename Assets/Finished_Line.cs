@@ -12,6 +12,7 @@ public class Finished_Line : MonoBehaviour
     {
         if (other.CompareTag("Finished"))
         {
+            MusicManager.instance.PlayWinSound();
             StartCoroutine(ShowGameOverAfterDelay());
             
         }
