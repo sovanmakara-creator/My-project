@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.33
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.33
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.33
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,6 +62,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
       propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: b69ab7dc4a09f094885bf950a65c44c3, type: 3}
@@ -109,14 +113,14 @@ MonoBehaviour:
   rotateY: 1
   rotateZ: 0
   rotationSpeed: 85.67
-  isFloating: 1
+  isFloating: 0
   useEasingForFloating: 1
-  floatHeight: 0.93
+  floatHeight: 0.43
   floatSpeed: 0.4
-  startScale: {x: 0.33, y: 0.33, z: 0.33}
-  endScale: {x: 0.63, y: 0.63, z: 0.63}
+  startScale: {x: 0.13, y: 0.13, z: 0.13}
+  endScale: {x: 0.33, y: 0.33, z: 0.33}
   isScaling: 0
-  useEasingForScaling: 1
+  useEasingForScaling: 0
   scaleLerpSpeed: 1.11
 --- !u!65 &-5395002859916668863
 BoxCollider:

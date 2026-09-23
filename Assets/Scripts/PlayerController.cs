@@ -1,8 +1,7 @@
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-// Attach this to the Player.
-// Requires a Rigidbody component.
 public class PlayerController : MonoBehaviour
 {
     [Header("Movement")]
@@ -11,33 +10,72 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public GameManager gameManager;
 
+    [Header("Start UI")]
+    public GameObject startInstructionText;
+
     private Vector3 currentDirection = Vector3.forward;
     private Rigidbody rb;
+
+    private bool hasGameStarted = false;
     private bool isDead = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        rb.constraints = RigidbodyConstraints.FreezeRotationX
-                        | RigidbodyConstraints.FreezeRotationY
-                        | RigidbodyConstraints.FreezeRotationZ;
+        rb.constraints =
+            RigidbodyConstraints.FreezeRotationX |
+            RigidbodyConstraints.FreezeRotationY |
+            RigidbodyConstraints.FreezeRotationZ;
+
+        currentDirection = Vector3.forward;
+
+        hasGameStarted = false;
+        isDead = false;
+
+        if (startInstructionText != null)
+        {
+            startInstructionText.SetActive(true);
+        }
     }
 
     void Update()
     {
         if (isDead) return;
 
-        // Spacebar - New Input System
-        if (Keyboard.current != null &&
-            Keyboard.current.spaceKey.wasPressedThisFrame)
+        if (gameManager != null && gameManager.IsGameFinished)
+            return;
+
+        bool spacePressed =
+            Keyboard.current != null &&
+            Keyboard.current.spaceKey.wasPressedThisFrame;
+
+        bool mouseClicked =
+            Mouse.current != null &&
+            Mouse.current.leftButton.wasPressedThisFrame;
+
+        // First Space press starts the game.
+        if (!hasGameStarted)
         {
-            ToggleDirection();
+            if (spacePressed && Time.timeScale > 0f)
+            {
+                hasGameStarted = true;
+
+                if (startInstructionText != null)
+                {
+                    startInstructionText.SetActive(false);
+                }
+            }
+
+            return;
         }
 
-        // Left mouse click - New Input System
-        if (Mouse.current != null &&
-            Mouse.current.leftButton.wasPressedThisFrame)
+        // Do not turn while the game is paused.
+        if (Time.timeScale == 0f)
+            return;
+
+        // Once the game has started, Space or click changes direction.
+        if (spacePressed || mouseClicked)
         {
             ToggleDirection();
         }
@@ -45,7 +83,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isDead) return;
+        if (!hasGameStarted || isDead)
+            return;
+
+        if (gameManager != null && gameManager.IsGameFinished)
+            return;
 
         Vector3 move =
             currentDirection *
@@ -67,33 +109,44 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-   void OnTriggerEnter(Collider other)
-{
-    if (isDead) return;
-
-    Debug.Log("Trigger collided with: " + other.gameObject.name + " | Tag: " + other.tag);
-
-    // Collect food
-    if (other.CompareTag("Collectible"))
+    void OnTriggerEnter(Collider other)
     {
-        if (gameManager != null)
+        if (!hasGameStarted || isDead)
+            return;
+
+        if (gameManager != null && gameManager.IsGameFinished)
+            return;
+
+        Debug.Log(
+            "Trigger collided with: " +
+            other.gameObject.name +
+            " | Tag: " +
+            other.tag
+        );
+
+        // Collect food.
+        if (other.CompareTag("Collectible"))
         {
-            gameManager.AddScore(1);
+            // Keep your existing collectible sound.
+            if (MusicManager.instance != null)
+            {
+                MusicManager.instance.PlayCollectingCoinSound();
+            }
+
+            Destroy(other.gameObject);
+
+            if (gameManager != null)
+            {
+                gameManager.AddScore(1);
+            }
         }
 
-        if (MusicManager.instance != null)
+        // Hit obstacle.
+        else if (other.CompareTag("DeathZone"))
         {
-            MusicManager.instance.PlayCollectingCoinSound();
+            Die();
         }
-        
-
-        Destroy(other.gameObject);
     }
-    else if (other.CompareTag("DeathZone"))
-    {
-        Die();
-    }
-}
 
     void Die()
     {
