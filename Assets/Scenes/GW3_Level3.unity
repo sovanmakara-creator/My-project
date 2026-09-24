@@ -4162,6 +4162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   scoreText: {fileID: 1153343829}
   gameOverPanel: {fileID: 1725117554}
+  levelCompletePanel: {fileID: 1455258149}
+  targetScore: 20
 --- !u!4 &1725068647
 Transform:
   m_ObjectHideFlags: 0

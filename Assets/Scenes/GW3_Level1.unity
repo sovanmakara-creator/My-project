@@ -1186,6 +1186,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 5
   gameManager: {fileID: 1725068646}
+  startInstructionText: {fileID: 0}
 --- !u!54 &633381609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2521,7 +2522,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 875836413}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
         m_MethodName: Main_menu
         m_Mode: 1
@@ -3663,7 +3664,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 875836413}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
         m_MethodName: GW3_level2
         m_Mode: 1
@@ -4094,6 +4095,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   scoreText: {fileID: 1153343829}
   gameOverPanel: {fileID: 1424264420}
+  levelCompletePanel: {fileID: 1772634004}
+  targetScore: 20
 --- !u!4 &1725068647
 Transform:
   m_ObjectHideFlags: 0

@@ -1317,6 +1317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   moveSpeed: 7
   gameManager: {fileID: 1725068646}
+  startInstructionText: {fileID: 0}
 --- !u!54 &633381609
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4422,7 +4423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   scoreText: {fileID: 1153343829}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 529086158}
+  levelCompletePanel: {fileID: 466853987}
+  targetScore: 20
 --- !u!4 &1725068647
 Transform:
   m_ObjectHideFlags: 0
